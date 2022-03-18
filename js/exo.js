@@ -11,7 +11,7 @@ const Hercule = {
   name: "Hercule",
   job: "Demi-dieu",
   age: 35,
-  département: 75,
+  departement: 75,
   arm: 60.5,
   inRelationship: "Oui",
 };
@@ -65,6 +65,7 @@ loopWorks();
 //console.log(time); Check dans la console du navigateur OK.
 var availability = document.querySelector("#availability");
 var time = base.getHour();
+
 function displayAvailability() {
   if (time >= 8 && time <= 20) {
     availability.textContent = "Disponible";
@@ -83,8 +84,21 @@ displayAvailability();
 //Etape 7 Fonction
 //On doit créer une function qui génère un pseudo.
 
-function UserNickName() {
-  var firstName = Hercule.name;
+function nickName(firstName, departement) {
+  var userNickName = `${firstName}-du-${departement}`;
+  return userNickName;
+  // return `${Hercule.name}-du-${Hercule.département}`;
 }
+var idPseudo = nickName(Hercule.name, Hercule.departement);
 
-//JE N'AI PAS TERMINE MAIS JE NE M4AVOUE PAS VAINCU !!!! DEMAIN JE CONTINUE !!! :)
+var profilName = document.querySelector("#profil-name");
+profilName.textContent = idPseudo;
+
+
+// On peut concaténer de façons différentes :
+
+// Méthode classqiue en gérant les espace manuellement.
+// var userNickName = firstName + "-du-" + userDepart;
+
+// Méthode des gabaris (gestion automatique par le navigateur des espaces)
+// var userNickName2 = `${firstName}-du-${userDepart}`;

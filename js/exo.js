@@ -95,10 +95,29 @@ var profilName = document.querySelector("#profil-name");
 profilName.textContent = idPseudo;
 
 
-// On peut concaténer de façons différentes :
+// NB : On peut concaténer de façons différentes :
 
 // Méthode classqiue en gérant les espace manuellement.
 // var userNickName = firstName + "-du-" + userDepart;
 
 // Méthode des gabaris (gestion automatique par le navigateur des espaces)
 // var userNickName2 = `${firstName}-du-${userDepart}`;
+
+
+
+// Étape 8 - Event
+// On va faire fonctionner le menu en haut à gauche!
+
+var menuToggler = document.querySelector("#menu-toggler");
+var headerBanner = document.querySelector("#header-banner");
+
+// Écoute l 'événement click sur l'élement possédant l 'id menu-toggler
+// J 'ai déjà prévu une classe banner--open qui ajoute les styles nécessaires pour voir le menu, tu dois l'
+// ajouter ou la retirer sur l 'élement ayant l'id header - banner
+// Quand l 'élement header-banner a déjà la classe banner--open (lors du click sur menu-toggler), on veut la lui retirer
+// Quand l 'élement header-banner n'
+// a pas la classe banner--open(toujours au moment d 'un click), on veut la lui ajouter
+// Si tout vas bien tu vois apparaître le menu au clic, puis si tu recliques il disparaît\ o /
+menuToggler.addEventListener("click", function () {
+  headerBanner.classList.toggle("banner--open")
+});

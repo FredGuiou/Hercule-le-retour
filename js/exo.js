@@ -121,3 +121,19 @@ var headerBanner = document.querySelector("#header-banner");
 menuToggler.addEventListener("click", function () {
   headerBanner.classList.toggle("banner--open")
 });
+
+
+// Étape 9 - Event bis
+// Cette fois - ci on va réagir à la soumission du formulaire en haut à droite qui possède l 'id contact
+
+var contact = document.querySelector("#contact");
+
+// Je ne veux pas que la page s 'actualise lorsqu'on valide le formulaire
+// Empêche la soumission du formulaire
+
+contact.addEventListener('submit', function (event) {
+  event.preventDefault();
+  alert("Hercule ne souhaite pas être dérangé !");
+});
+
+// A la place il faut afficher une boîte de dialogue en alerte qui dit Hercule ne souhaite pas être dérangé

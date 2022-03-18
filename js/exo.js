@@ -137,3 +137,44 @@ contact.addEventListener('submit', function (event) {
 });
 
 // A la place il faut afficher une boîte de dialogue en alerte qui dit Hercule ne souhaite pas être dérangé
+
+//Challenge de base terminé !!
+
+//Place aux bonus ! ;)
+
+
+// Bonus Étape 10 - Algo
+// La programmation c'est comme une recette de cuisine, il faut décrire nos étapes une par une pour faire un bon résultat
+
+// On veut afficher le pourcentage de votes pour Hercule et pour César sur la droite
+// Le nombre de vote de chacun est accéssible via la propriété vote de l'objet base
+var HerculeVote = base.vote.hercule;
+var CesarVote = base.vote.cesar;
+var totalVote = HerculeVote + CesarVote;
+
+// La formule pour calculer un pourcentage est valeurRelative / valeurTotale * 100
+
+var herculePercent = Math.round(HerculeVote / totalVote * 100);
+var cesarPercent = Math.round(CesarVote / totalVote * 100);
+
+// Tu pourras afficher tes calculs dans les 2 élements possédant la classe people__popularity présents
+// pour Hercule dans l'élement avec l'id #trends-hercule et pour César dans l'élement avec l'id #trends-cesar
+
+var popHercule = document.querySelector("#trends-hercule .people__popularity");
+var popCesar = document.querySelector("#trends-cesar .people__popularity");
+
+popHercule.innerText = herculePercent + " %";
+popCesar.innerText = cesarPercent + " %";
+
+
+// La cerise sur le gateau serait de donner une largeur aux 2 élements qui ont la classe people__bar,
+// ce sont les 2 petites barres oranges, si on utilise le pourcentage calculé comme largeur ça devrait être chouette
+// A toi d'assembler les morceaux thinking
+
+
+var herculePeopleBar = document.querySelector("#trends-hercule .people__bar");
+herculePeopleBar.style.width = herculePercent + "%";
+
+
+var cesarPeopleBar = document.querySelector("#trends-cesar .people__bar");
+cesarPeopleBar.style.width = cesarPercent + "%";

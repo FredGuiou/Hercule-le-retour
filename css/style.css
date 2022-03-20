@@ -13,6 +13,7 @@ body {
     transform: translateX(-20%);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -60,6 +61,7 @@ body {
   display: inline-block;
   min-width: 1em;
 }
+
 .banner--open .banner__button::before {
   content: '\00D7';
 }
@@ -81,6 +83,7 @@ body {
   animation: slide .3s 0s 1 ease;
   border-bottom-right-radius: 10px;
 }
+
 .banner--open .menu {
   display: block;
 }
@@ -167,7 +170,7 @@ body {
 }
 
 #availability::before {
-  content:"";
+  content: "";
   width: 8px;
   height: 8px;
   display: inline-block;

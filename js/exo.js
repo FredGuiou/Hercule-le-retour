@@ -50,7 +50,7 @@ header.appendChild(title);
 //Je crée donc ma boucle dans une fonction loopWorks (en dehors d'un objet) en appelant la méthode fournie dans base.js à chaque tour de boucle.
 //J'appelle ma fonction
 function loopWorks() {
-  for (let number = 0; number < 11; number++) {
+  for (let number = 0; number < 12; number++) {
     base.displayWork(number);
   }
 }

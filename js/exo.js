@@ -178,3 +178,40 @@ herculePeopleBar.style.width = herculePercent + "%";
 
 var cesarPeopleBar = document.querySelector("#trends-cesar .people__bar");
 cesarPeopleBar.style.width = cesarPercent + "%";
+
+//Bonus Etape 12
+//On crée une variable qu'on appelle en DOM #activities
+
+var activities = document.querySelector("#activities");
+
+//On remarque dans le html et CSS que l'Id activities a une classe hidden display none.
+//On supprime cette classe hidden à la variable activities dans Js pour afficher dans le Dom.
+activities.classList.remove("hidden");
+
+//On crée une variable activitiesLenght pour reprendre le nombre d'occurence dans
+//le tableau activities.
+const activitiesLength = base.activities.length
+
+//On boucle de 0 à Max la longueur du tableau avec for.
+for (i = 0; i < activitiesLength; i++) {
+
+//La condition à boucler
+//Si l'auteur de chaque occurence du tableau activities est égal
+//à Hercule et que le finished de chaque occurence est true
+//alors :
+    if (base.activities[i].author === "Hercule" && base.activities[i].finished === true) {
+        //On crée un li dans le DOM
+        const liOfActivities = document.createElement("li");
+        //On lui ajoute la classe tasks__info pour reprendre le style css
+        liOfActivities.classList.add("tasks__info");
+        //On récupère l'élémént ul par sa classe tasks qui existe dans le html
+        const taskClass = document.getElementsByClassName("tasks");
+        //On ajoute la classe tasks item à la variable taskClass (ul)
+        //On Doit lui préciser la position taskClass qu'on doit sélectionner.
+        taskClass[0].classList.add("tasks__item")
+        //On met en place l'adoption du li (liOfActivities) par le ul (taskClass)
+        taskClass[0].appendChild(liOfActivities);
+        //On fait apparaitre le titre de chque activités terminées
+        liOfActivities.innerText = base.activities[i].title;
+    };
+};
